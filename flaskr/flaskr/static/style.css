@@ -1,0 +1,16 @@
+form {
+    width: 50%;
+    margin: auto;
+}
+#headerR {
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+
+}
+#webV {
+    text-decoration: line-through;
+    font-size: 60%;
+    color: black;
+    font-weight: normal;
+}

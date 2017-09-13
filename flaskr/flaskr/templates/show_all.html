@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pick Action</title>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+</head>
+<body>
+<div class="container">
+    <h3>Students (<a href = "{{ url_for('show_all') }}">Add Student </a>) </h3>
+ <a href="{{ url_for('new') }}" id="addMembers" name="addMembers"> Members adding system</a>
+    {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+     <table>
+        <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Surname</th>
+            <th>City</th>
+            <th>Address</th>
+            <th>Sex</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for member in members %}
+        <tr>
+            <td>{{ member.firstname }}</td>
+            <td>{{ member.surname }}</td>
+            <td>{{ member.city }}</td>
+            <td>{{ member.addr }}</td>
+            <td>{{ member.sex }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+<script src="{{ url_for('static', filename='js/jQuery.js') }}" type="text/javascript"> </script>
+<script src="{{ url_for('static', filename='js/bootstrap.js') }}" type="text/javascript"> </script>
+<script src="{{ url_for('static', filename='js/styles.js') }}" type="text/javascript"> </script>
+
+
+</body>
+</html>
